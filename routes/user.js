@@ -20,7 +20,7 @@ router.post('/login', passport.authenticate('local-login', {
 
 router.get('/profile', function (req, res, callback) {
     //res.json(req.user) 
-    User.findOne({
+    User.findById({
         _id: req.user._id
     }, function (err, user) {
         if (err) return callback(err)
